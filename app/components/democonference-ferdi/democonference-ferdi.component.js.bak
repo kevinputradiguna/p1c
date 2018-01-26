@@ -1,0 +1,270 @@
+function DemoConferenceControllerV2($scope, Rest, $q, $sce, $route, $location, $compile, CONFIG, detailServices, locationService, NgTableParams){
+    var ctrl = this;
+    var publisher;
+    var sessionId;
+    var token;
+    var apiKey;
+    var isInstructor;
+    var slides = $scope.slides = [];
+    var text = [];
+    var connectionId = [];
+    var currIndex = 0;
+    $scope.myInterval = 5000;
+   
+    ctrl.$onInit = function(){
+        sessionId = localStorage.getItem('sessionId');
+        token = localStorage.getItem('token');
+        apiKey = localStorage.getItem('apiKey');
+        isInstructor = localStorage.getItem('instructor');
+        $scope.raiseHandInsShow = false;
+        $scope.raiseHandShow = false;
+        ctrl.initialSession();
+    };
+
+    ctrl.initialSession = function(){
+        session = OT.initSession(apiKey, sessionId);
+            
+            if(isInstructor == 0){
+                session.on('streamCreated', function(event){
+                    session.subscribe(event.stream, 'subscriber',{
+                        resolution:'640x480',
+                        frameRate: 7,
+                        insertMode: 'replace',
+                        width: '100%',
+                        height: '100%',
+                        disabledAudioProcessing: false
+                    },handleError);
+                });
+                
+            }else{
+                publisher = OT.initPublisher('publisher',{
+                    resolution:'640x480',
+                    frameRate: 7,
+                    insertMode: 'replace',
+                    width: '100%',
+                    height: '100%',
+                    disabledAudioProcessing: false
+                }, handleError);
+                $scope.raiseHandInsShow = true;
+            }
+            
+        session.connect(token, function(error) {
+            if (error) {
+                handleError(error);
+            } else {
+                console.log("ini is instructor " +isInstructor);
+                if(isInstructor == 1){
+                    session.publish(publisher);
+                }
+            }
+        });
+
+        session.on({
+            connectionCreated: function (event) {
+                var index;
+                if (event.connection.connectionId != session.connection.connectionId) {
+                    angular.forEach(slides, function (slide) {
+                        if (event.connection.connectionId == slide.connectionId) {
+                            index = $scope.slides.indexOf(slide.connectionId);
+                            $scope.slides.splice(index, 1);
+                            text.splice(index, 1);
+                            connectionId.splice(index, 1);
+                        }
+                    });
+                    text.push(event.connection.data);
+                    connectionId.push(event.connection.connectionId);
+
+                    slides.push({
+                        connectionId: connectionId[currIndex],
+                        image: 'assets/img/icon/profile-default.png',
+                        text: text[currIndex],
+                        id: currIndex++
+                    });
+                }
+            }
+        });
+
+        session.on('signal:raiseHandOpen', function(event){
+            if(event.from.connectionId !== session.connection.connectionId){
+                localStorage.setItem('instructorConnection', event.from.connectionId);
+                $scope.raiseHandShow = true;
+            }
+
+        });
+
+        session.on('signal:raiseHand',function(event){
+            if(event.from.connectionId !== session.connection.connectionId && event.data == true){
+                var raisedHandProp = document.getElementById(event.from.connectionId);
+                raisedHandProp.setAttribute('src','assets/img/icon/raisehand-conference-demo.png');
+            }else if(event.from.connectionId !== session.connection.connectionId && event.data != true){
+                var raisedHandProp = document.getElementById(event.from.connectionId);
+                raisedHandProp.setAttribute('src','assets/img/icon/profile-default.png');
+            }
+        });
+
+        session.on('signal:msg', function(event){
+            var chatPanel = document.getElementById('chat');
+            if(event.from.connectionId === session.connection.connectionId){
+                var list = document.createElement('li');
+                list.setAttribute('class','right clearfix');
+                var spanChat = document.createElement('span');
+                spanChat.setAttribute('class','chat-img pull-right');
+                var imageSpanChat = document.createElement('img');
+                imageSpanChat.setAttribute('class','img-circle');
+                imageSpanChat.setAttribute('src','assets/img/icon/profile-default.png');
+                imageSpanChat.setAttribute('alt','User Avatar');
+                imageSpanChat.setAttribute('width','50');
+                imageSpanChat.setAttribute('height','50');
+                var chatBody = document.createElement('div');
+                chatBody.setAttribute('class','chat-body clearfix');
+                var chatHeader = document.createElement('div');
+                chatHeader.setAttribute('class','header');
+                var name = document.createElement('p');
+                name.setAttribute('class','pull-right primary-font name-bold');
+                name.textContent = event.data.name;
+                var chatText = document.createElement('p');
+                chatText.textContent= event.data.msg;
+                chatHeader.appendChild(name);
+                spanChat.appendChild(imageSpanChat);
+                chatBody.appendChild(chatHeader);
+                chatBody.appendChild(chatText);
+                list.appendChild(spanChat);
+                list.appendChild(chatBody);
+                chatPanel.appendChild(list);
+                
+            }else{
+                var list = document.createElement('li');
+                list.setAttribute('class','left clearfix')
+                var spanChat = document.createElement('span');
+                spanChat.setAttribute('class','chat-img pull-left');
+                var imageSpanChat = document.createElement('img');
+                imageSpanChat.setAttribute('class','img-circle');
+                imageSpanChat.setAttribute('src','assets/img/icon/profile-default.png');
+                imageSpanChat.setAttribute('alt','User Avatar');
+                imageSpanChat.setAttribute('width','50');
+                imageSpanChat.setAttribute('height','50');
+                var chatBody = document.createElement('div');
+                chatBody.setAttribute('class','chat-body clearfix');
+                var chatHeader = document.createElement('div');
+                chatHeader.setAttribute('class','header');
+                var name = document.createElement('p');
+                name.setAttribute('class','primary-font name-bold');
+                console.log(localStorage.getItem('name'));
+                name.textContent = event.data.name;
+                var chatText = document.createElement('p');
+                console.log(event.data);
+                chatText.textContent = event.data.msg;
+                chatHeader.appendChild(name);
+                spanChat.appendChild(imageSpanChat);
+                chatBody.appendChild(chatHeader);
+                chatBody.appendChild(chatText);
+                list.appendChild(spanChat);
+                list.appendChild(chatBody);
+                chatPanel.appendChild(list);
+            }
+        });
+
+        
+    };
+
+    $scope.submitChat = function(event){
+        var message = $scope.msg;
+        session.signal({
+            type:'msg',
+            data: {
+                msg: message,
+                name: localStorage.getItem('name')
+            }
+        }, function(error){
+            if(error){
+                console.log('Error sending signal chatting');
+            }else{
+                var inputText = document.getElementById('btn-input');
+                inputText.value = "";
+                $scope.msg = "";
+            }
+        });
+    }
+
+    $scope.raiseHand = function(){
+        session.signal({
+            type:'raiseHand',
+            data: true
+        }, function(error){
+            if(error){
+                console.log('Error sending signal raise hand');
+            }
+        });
+    }
+    
+    $scope.chooseMember = function (event) {
+        if (session.connection.connectionId == event) {
+            publisher = OT.initPublisher('publisher', {
+                resolution: '640x480',
+                frameRate: 7,
+                insertMode: 'replace',
+                width: '100%',
+                height: '100%',
+                disabledAudioProcessing: false
+            }, handleError);
+            session.publish(publisher);
+        } else if (session.connection.connectionId == localStorage.getItem('instructorConnection')) {
+            var publisherSwitch = OT.initPublisher('publisherSwitch', {
+                resolution: '640x480',
+                frameRate: 7,
+                insertMode: 'replace',
+                width: '100%',
+                height: '100%',
+                disabledAudioProcessing: false
+            }, handleError);
+            session.on('streamCreated', function (event) {
+                session.subscribe(event.stream, 'subscriber', {
+                    resolution: '640x480',
+                    frameRate: 7,
+                    insertMode: 'replace',
+                    width: '100%',
+                    height: '100%',
+                    disabledAudioProcessing: false
+                }, handleError);
+            });
+            session.publish(publisherSwitch);
+            session.unpublish(publisher);
+        } else {
+            session.on('streamCreated', function (event) {
+                session.subscribe(event.stream, 'subscriber', {
+                    resolution: '640x480',
+                    frameRate: 7,
+                    insertMode: 'replace',
+                    width: '100%',
+                    height: '100%',
+                    disabledAudioProcessing: false
+                }, handleError);
+            });
+        }
+    }
+
+    $scope.testClick = function(){
+        console.log('test click');
+    }
+
+    $scope.raiseHandIns = function(){
+        session.signal({
+            type:'raiseHandOpen',
+        }, function(error){
+            if(error){
+                console.log('Error sending signal raise hand session');
+            }
+        });
+    }
+
+    function handleError(error) {
+        if (error) {
+            alert(error.message);
+        }
+    }
+}
+    
+app.component('democonferencev2',{
+    templateUrl:'app/components/democonference-ferdi/democonference-ferdi.html',
+    controller: DemoConferenceControllerV2
+});

@@ -1,0 +1,78 @@
+<style>
+    .content-container{
+        display:flex;
+        flex-direction: row;
+        width:100%;
+        height:6%;
+        background-color: lightgray;
+        
+    }
+
+    #logo-container{
+        margin:auto;
+        justify-content: center;
+    }
+
+    #text-container{
+        margin: auto;
+        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+        color: black;
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    #middle-container{
+        display:flex;
+        margin:auto;
+        flex-direction: row;
+        justify-content: center;
+
+    }
+    #setting-container{
+        margin:auto;
+    }
+
+    .null-container{
+        display:flex;
+        flex-basis:0.5%;
+        background-color: black;
+        border-left: 2px solid white;
+    }
+
+    .menu-container{
+        display:flex;
+        flex-direction: row;
+        text-align: right;
+        
+    }
+
+    .profile-container{
+        display:flex;
+        flex-direction: row;    
+        text-align: center;
+    }
+
+</style>
+<div class="content-container">
+    <div id="logo-container" style="flex-basis:5%;text-align:center;">
+        <img ng-src="assets/img/Edplus.png" width="50%" height="75%">
+    </div>
+    <div class="null-container">
+    </div>
+    <div id="text-container" style="flex-basis: 75%;">
+        <span>Ed+ Video Conference</span>
+    </div>
+    <div id="middle-container" style="flex-basis:10%;">
+        <div class="menu-container">
+            <img ng-src="assets/img/icon/top-menu-list.png" width="50%" height="75%">
+        </div>
+        <div class="profile-container">
+            <img ng-src="assets/img/icon/top-menu-profile.png" width="50%" height="75%">
+        </div>
+    </div>
+    <div class="null-container">
+    </div>
+    <div id="setting-container" style="flex-basis:5%;text-align:center">
+        <img ng-src="assets/img/icon/top-menu-option.png" width="50%" height="75%">
+    </div>
+</div>

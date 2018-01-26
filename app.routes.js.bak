@@ -1,0 +1,20 @@
+app.config(function ($routeProvider) {
+	$routeProvider
+    
+		.when('/',{
+			template: "<signin></signin>"
+		})
+
+		.when('/profile',{
+			template: "<profile></profile>"
+		})
+
+		.when('/createroom',{
+			template: "<createroom></createroom>"
+		})
+		
+		.otherwise({
+			redirectTo: '/'
+		})
+
+});

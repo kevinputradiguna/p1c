@@ -1,0 +1,100 @@
+.democonference-container-fluid{
+    filter:brightness(0.5);
+    z-index: -1
+}
+#videos {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    right:0;
+    bottom:0;
+    margin-right: auto;
+   
+}
+
+.navbar-toggler-customize{
+    width: 100%;
+    background-color: black;
+    color:snow;
+    font-weight: bold;
+    opacity: 0.8;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    border: 0;
+}
+
+#navbarSupportedContent{
+    margin:0;
+    padding:0;
+    height: 5%;
+}
+
+.navbar-nav-custom{
+    margin:0;
+    padding:0;
+}
+
+
+.navbar-custom-k{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    
+}
+
+.navbar-custom-b{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+}
+
+#publisher {
+    position: absolute;
+    width: 360px;
+    height: 240px;
+    bottom: 10px;
+    left: 10px;
+    z-index: 100;
+    border: 3px solid white;
+    border-radius: 3px;
+}
+
+#subscriber {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.navbar-nav-custom ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    
+}
+
+.navbar-nav-custom li {
+    float: left;
+    width:24%;
+}
+
+.navbar-nav-custom li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+}
+
+.navbar-nav-custom li a img{
+    width:80%;
+    height:5%;
+    
+}
+

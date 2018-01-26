@@ -1,0 +1,27 @@
+thead{
+   background-color: #35ddfb; 
+   border-bottom: 3px solid white;
+}
+
+tbody{
+    background-color: #cfe6ea;
+}
+
+tbody tr{
+    border-bottom: 2px solid white;
+}
+
+tbody tr td{
+    text-align: left;
+}
+
+.button-table-orange{
+    background-color: #fc4343;
+    border-color: #fc4343;
+  }
+      
+.button-table-blue{
+    color: black;
+    background-color: #05bafd;
+    border-color: #05bafd;
+}

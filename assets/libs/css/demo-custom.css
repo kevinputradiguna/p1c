@@ -1,0 +1,180 @@
+@media only screen and (max-width: 2560px){
+    .demo-login{
+        background-image: url("../../img/signin/signin-background.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height:100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        filter: brightness(80%);
+    }
+
+    .row-header{
+        width:100%;
+        padding: 0;
+        margin:0;
+    }
+
+    .col-login{
+        width:100%;
+        text-align:center;
+        padding: 1%;
+    }
+
+    .col-xs-6 img{
+        width:10%;
+        height:25%;
+    }
+
+    .col-xs-6 p{
+        font-size: 12px;
+        font-family: "Lucida Console", Monaco, monospace;
+        color: white;
+        font-weight: bold;
+    }
+}
+
+@media only screen and (max-width: 1440px){
+    .demo-login{
+        background-image: url("../../img/signin/signin-background.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height:100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        filter: brightness(80%);
+    }
+
+    .row-header{
+        width:100%;
+        padding: 0;
+        margin:0;
+    }
+
+    .col-login{
+        width:100%;
+        text-align:center;
+        padding: 1%;
+    }
+
+    .col-xs-6 img{
+        width:10%;
+        height:25%;
+    }
+
+    .col-xs-6 p{
+        font-size: 12px;
+        font-family: "Lucida Console", Monaco, monospace;
+        color: white;
+        font-weight: bold;
+    }
+}
+
+
+
+@media only screen and (max-width : 768px){
+    .demo-login{
+        background-image: url("../../img/signin/signin-background.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height:100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        filter: brightness(80%);
+    }
+
+    .row-header{
+        width:100%;
+        padding: 0;
+        margin:0;
+    }
+    .col-login{
+        width:100%;
+        text-align:center;
+        padding: 3%;
+    }
+    .col-xs-6 img{
+        width:20%;
+        height:25%;
+    }
+
+    .col-xs-6 p{
+        font-size: 12px;
+        font-family: "Lucida Console", Monaco, monospace;
+        color: white;
+        font-weight: bold;
+    }
+}
+
+@media only screen and (max-width : 425px){
+    .demo-login{
+        background-image: url("../../img/signin/signin-background.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height:100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        filter: brightness(80%);
+    }
+
+    .row-header{
+        width:100%;
+        padding: 0;
+        margin:0;
+    }
+    .col-login{
+        width:100%;
+        text-align:center;
+        padding: 3%;
+    }
+    .col-xs-6 img{
+        width:15%;
+        height:25%;
+    }
+
+    .col-xs-6 p{
+        font-size: 12px;
+        font-family: "Lucida Console", Monaco, monospace;
+        color: white;
+        font-weight: bold;
+    }
+}
+
+
+@media only screen and (max-width : 320px){
+    .demo-login{
+        background-image: url("../../img/signin/signin-background.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: brightness(80%);
+        height:100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .row-header{
+        display:inline;
+    }
+
+    .col-login{
+        width:100%;
+        text-align:center;
+        padding: 3%;
+    }
+    .col-xs-6 img{
+        width:40%;
+        height:25%;
+    }
+
+    .col-xs-6 p{
+        font-size: 12px;
+        font-family: "Lucida Console", Monaco, monospace;
+        color:white;
+    }
+
+}

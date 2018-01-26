@@ -1,0 +1,103 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 demo-creatroom-topmenu">
+            <div ng-include="topMenu"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 demo-creatroom-subtopmenu">
+            <subtopmenu></subtopmenu>
+        </div>
+    </div>
+    <div class="row row-content">
+        <div ng-include="sideBar"></div>
+        <div class="col-md-9 demo-createroom-content">
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Instructor Name</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="InstructorNameAutoComplete" name="instructor" ng-model="instructor" ng-keyup="completed(instructor)"/>
+                    <ul class="list-group" ng-model="hidethis" ng-hide="hidethis">
+                        <li class="list-group-item" ng-repeat="instructorData in filterInstructor" ng-click="fillInstructorBox(instructorData)">{{instructorData.firstName + " " +instructorData.lastName}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Room Name</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="roomNameInput" name="roomName" ng-model="roomName"/>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Schedule</label>
+                </div>
+                <div class="col-md-8">
+                        <input ng-model="date3" class="schedulePicker" datetime-picker date-format="yyyy-MM-dd HH:mm:ss" close-on-select="false" size="30" onkeydown="return false"/>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Duration</label>
+                </div>
+                <div class="col-md-8">
+                    <select ng-model="data.duration" class="durationSelect">
+                        <option value="">Please Select</option>s
+                        <option ng-repeat="option in data.availablesOption" value="{{option.value}}">{{option.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Listening Grade</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="number" class="numberInput" name="minWatching" min="1" ng-model="minWatching"/>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>SKP Points</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="number" class="numberInput" name="skpPoints" min="1" value="1" ng-model="skpPoints"/>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Total Members Invited</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="number" class="numberInput" name="totalMembersInvited" min="1" max="50" ng-model="totalMembersInvited" ng-change="inputNumberChanged()"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row" id="emailAppended">
+                        <table class="table" ng-table="emailTable" show-filter="false">
+                            <thead class="table-head"><th></th></thead>
+                            <tr ng-repeat="dom in domList"> 
+                                <td ng-bind-html="dom"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8 text-center">
+                    <a class="btn btn-primary button-blue" ng-href="javascript:void(0);" ng-click="createRoom();">Create Room</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

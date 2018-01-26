@@ -1,0 +1,19 @@
+<div class="container-fluid subtopmenu-container-fluid">
+    <div class="row top-menu2">
+        <div class="col-md-2 subtopmenu-text">
+            <p>{{navName}}</p>
+        </div>
+        <div class=col-md-2>
+        </div>
+        <div class="col-md-6 search-container">
+            <div ng-show={{isShow}}>
+            <input type="text" placeholder="Search room by name" ng-model="searchRoom"><button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+        <div class="col-md-2 subtopmenu-back">
+            <div ng-show={{isShowBack}}>
+            <i class="fa fa-arrow-left"></i> <a ng-href="{{linkBack}}" class="text-black">Back</a>
+            </div>
+        </div>
+    </div>
+</div>

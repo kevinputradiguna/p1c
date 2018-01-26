@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="assets/libs/css/bootstrap-3.3.7.css">
+        <link rel="stylesheet" type="text/css" href="assets/libs/css/signin-custom.css">
+        <link rel="stylesheet" type="text/css" href="assets/libs/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="assets/libs/css/subtopmenu-ver2.css">
+        <link rel="stylesheet" type="text/css" href="assets/libs/css/angularjs-datetime-picker.css">
+        <link rel="stylesheet" type="text/css" href="assets/libs/css/ng-table.css">
+        <link rel="stylesheet" type="text/css" href="assets/libs/css/table-custom.css">
+        <link rel="stylesheet" type="text/css" href="assets/libs/css/demo-custom.css">
+        <link rel="stylesheet" type="text/css" href="assets/libs/css/democonference-custom.css">
+        <link rel="stylesheet" type="text/css" href="assets/libs/css/democreateroom-custom.css">
+        <link rel="stylesheet" type="text/css" href="assets/libs/css/topmenu-ver2.css">
+        <link rel="stylesheet" type="text/css" href="assets/libs/css/topmenu-demo.css">
+        <link rel="stylesheet" type="text/css" href="assets/libs/css/sidebar-admin-custom.css">
+        <link rel="stylesheet" type="text/css" href="assets/libs/css/sidebar-guest-custom.css">
+        <link rel="stylesheet" type="text/css" href="assets/libs/css/democonference-ferdi-custom.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <script src="assets/libs/angularjs/jquery.min.js"/></script>
+        <script src="assets/libs/angularjs/bootstrap-3.3.7.js"/></script>
+        <script src="assets/libs/angularjs/bootstrap-3.3.7.min.js"/></script>
+        <script src="assets/libs/angularjs/angular.min.js" /></script>
+        <script src="assets/libs/angularjs/angular-route.min.js"/></script>
+        <script src="assets/libs/angularjs/angularjs-datetime-picker.js"/></script>
+        <script src="assets/libs/angularjs/ng-table.js"/></script>
+        <script src="assets/libs/angularjs/angular-sanitize.min.js"/></script>
+        <!--<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"/></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+        <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+        
+        
+        <script src="app.js"/></script>
+        <script src="app.routes.js"/></script>
+        <script src="config.js"/></script>
+
+        <script src="app/shared/service/rest.js"/></script>
+        
+        <!-- angular component -->
+        <script src="app/components/demo/demo.component.js"></script>
+        <script src="app/components/democonference/democonference.component.js"></script>
+        <script src="app/components/democreateroom/democreateroom.component.js"></script>
+        <script src="app/components/subtopmenu/subtopmenu-ver2.component.js"></script>
+        <script src="app/components/democonference-ferdi/democonference-ferdi.component.js"></script>
+        <script src="index.ctrl.js"/></script>
+        <title>{{ bluebox }}</title>
+        
+    </head>
+    <body ng-app="bluebox" ng-controller="indexCtrl">
+    <div ng-view></div>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+.subtopmenu-container-fluid{
+    height:6%;
+    background-color: #84ddff;
+    padding:0;
+    margin:0;
+}
+
+.subtopmenu-text p{
+    text-align: center;
+    color:white;
+    font-size:14px;
+    padding: 12px 0;
+    margin-bottom: 0;
+}
+
+.search-container button{
+    position: absolute;
+    padding: 6px 10px;
+    margin: 7px 0;
+    background-color: snow;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    height:70%;
+}
+
+.search-container button:hover {
+    background-color: white;
+}
+
+.search-container input[type=text]{
+    text-align: center;
+    height:70%;
+    margin: 7px 0;
+    width:95%;
+    font-size: 12px;
+    border: none;
+}
+
+.search-container input::focus{
+    outline: none;
+}
+
+.top-menu2{
+
+}

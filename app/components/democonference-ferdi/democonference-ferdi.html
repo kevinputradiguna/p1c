@@ -1,0 +1,110 @@
+<div id="videos">
+    <div id="subscriber" class="vjs-default-skin vjs-big-play-centered" preload="auto" data-setup='{ "example_option": true, "width": "auto", "height": "auto", "techOrder": ["html5","flash"] }'></div>
+    <div id="publisher" class="vjs-default-skin vjs-big-play-centered" preload="auto" data-setup='{ "example_option": true, "width": "auto", "height": "auto", "techOrder": ["html5","flash"] }'></div>
+    <div id="publisherSwitch"></div>
+</div>
+<div class="container-fluid">
+    <div class="btn-group btn-group-justified small_menu" style="display:none;">
+        <a class="btn btn-transparent btn-small" href="javascript:void(0);">Menu</a>
+    </div>
+    <div class="btn-group btn-group-justified header_menu">
+        <a class="btn btn-transparent btn-small message_menu" href="javascript:void(0);" ng-click="topMessage();" ng-show="messageShow">
+            <img width="30" height="30" ng-src="assets/img/icon/chat-conference-demo-2.png">
+        </a>
+        <a class="btn btn-transparent btn-small file_menu" href="javascript:void(0);" ng-click="topFolder();">
+            <img width="30" height="30" ng-src="assets/img/icon/folder-conference-demo.png">
+        </a>
+        <a  class="btn btn-transparent btn-small raise_menu" ng-click="raiseHand();" href="javascript:void(0);" ng-show="raiseHandShow">
+            <img id="memberRaiseHand" width="30" height="30" ng-src="assets/img/icon/raisehand-conference-demo.png" >
+        </a>
+        <a class="btn btn-transparent btn-small raise_menu" ng-click="raiseHandIns();" href="javascript:void(0);" ng-show="raiseHandInsShow">
+            <img id="insRaiseHand" width="30" height="30" ng-src="assets/img/icon/raisehand-conference-demo.png">
+        </a>
+        <a class="btn btn-transparent btn-small" href="javascript:void(0);" ng-click="disconnect();">
+            <img width="30" height="30" ng-src="assets/img/icon/telephone-conference-demo.png">
+        </a>
+    </div>
+    <!--<a href="#" class="show_hide pull-right">
+        <i data-attr="up" class="fa fa-angle-double-up"></i>
+    </a>-->
+</div>
+<div class="container-fluid">
+    <div class="message display_menu_list" ng-show="topMessageShow">
+        <div class="col-sm-12">
+            <div class="panel panel-primary">
+                <div class="panel-body" scroll-glue="glued">
+                    <ul class="chat" id="chat"></ul>
+                </div>
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input id="btn-input" type="text" class="form-control input-sm" ng-model="msg" placeholder="Type your message here..." />
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning btn-sm" ng-click="submitChat();" id="btn-chat">
+                                <i class="fa fa-paper-plane"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="files display_menu_list" ng-show="topFolderShow">
+        <div class="col-sm-6 col-sm-offset-3">
+            <table class="table">
+                <tr>
+                    <td><i class="fa fa-file"></i></td>
+                    <td>Presentation 1</td>
+                    <td>
+                        <a href="javascript:void(0);">
+                            <i class="fa fa-download"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-file-pdf-o"></i></td>
+                    <td>Presentation 1</td>
+                    <td>
+                        <a href="javascript:void(0);">
+                            <i class="fa fa-download"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-file"></i></td>
+                    <td>Presentation 1</td>
+                    <td>
+                        <a href="javascript:void(0);">
+                            <i class="fa fa-download"></i>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="raise_hand_message display_menu_list" style="display:none;">
+        <div class="pull-left">
+            <i class="fa fa-circle text-danger"></i>
+            <small>00:05 left</small>
+        </div>
+        <div class="pull-right">
+            <i class="fa fa-circle text-success"></i>
+            <small>Please Speak Up</small>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="footer">
+        <div class="col-xs-10 col-xs-offset-1">
+            <slick class="slider" settings="slickConfig2" ng-if="slickConfig2Loaded">
+                <div ng-repeat="slide in slides track by $index">
+                    <center>
+                        <a ng-href="javascript:void(0);" ng-click="chooseMember($event, slide.connectionId)" ng-disabled="{{disabledMember}}" class="{{isInsturctorToogle == 0?'disabledToogle':''}}">
+                            <img class="thumbnail" id="{{slide.connectionId}}" ng-src="{{slide.image}}">
+                        </a>
+                        <small>{{slide.text}}</small>
+                    </center>
+                </div>
+            </slick>
+        </div>
+    </div>
+</div>

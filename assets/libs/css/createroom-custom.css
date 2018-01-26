@@ -1,0 +1,51 @@
+.row-content{
+    height:87%;
+}
+
+.schedulePicker{
+    background-image:url(/MyApp/assets/img/icon-create-room/Icon-Box-Schedule.png); 
+    background-repeat: no-repeat; 
+    background-size: 15px 15px;
+    background-position: 98% 40%;
+    padding-left: 10px;
+}
+
+.roomNameInput{
+    width: 400px;
+    padding-left: 10px;
+}
+
+.InstructorNameAutoComplete{
+    width: 400px;
+    padding-left: 10px;
+    background-image:url(/MyApp/assets/img/icon-create-room/Icon-Search-Box-Instructure-Name.png); 
+    background-repeat: no-repeat; 
+    background-size: 15px 15px;
+    background-position: 98% 40%;
+}
+
+select {
+    -webkit-appearance: none;
+}
+
+.durationSelect{
+    width: 130px;
+    height: 34px;
+    padding-left: 10px;
+    background-image:url(/MyApp/assets/img/icon-create-room/Icon-Box-Duration.png); 
+    background-repeat: no-repeat; 
+    background-position: 98% 40%;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    opacity: 1
+}
+
+.numberInput{
+    width: 70px;
+    text-align: center;
+}
+
+.col-md-9{
+    padding-left: 10%;
+}

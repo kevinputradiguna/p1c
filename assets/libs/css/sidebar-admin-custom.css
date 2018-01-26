@@ -1,0 +1,62 @@
+.side-menu-admin{
+    height: 100%;
+    padding: 0;
+    margin :0;
+}
+.navbar-menu-admin{
+    height: 100%;
+    background-color: #ebedf9;
+    padding-left: 0;
+    border: 0;
+    margin: 0;
+
+}
+
+.col-md-3{
+    height: 100%;
+    padding: 0;
+}
+
+
+.title-side-menu-admin{
+    color: black;
+    font-size: 15px; 
+    font-weight: bold;
+   
+}
+
+.sidebar-nav li{
+    height:10%;
+}
+
+.sidebar-nav li a{
+    text-align: center;
+    border-bottom: 1px solid black;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top:5%;
+}
+
+.sidebar-nav li:hover{
+    background-color: lightgrey;
+}
+
+.sidebar-nav li a:hover{
+    background-color: lightgrey;
+}
+
+.active{
+    background-color: lightgrey;
+    pointer-events: none;
+    cursor: default;
+    
+}
+.active-text-side-menu-admin{
+    color : black;
+}
+
+.menu-clickable{
+    margin-left: 25%;
+    text-align: left;
+}
+

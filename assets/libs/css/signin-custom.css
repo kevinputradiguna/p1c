@@ -1,0 +1,125 @@
+.signin-image{
+    height:80%;
+    width:75%;
+}
+
+.signin-header-img{
+    text-align: center;
+}
+
+.signin-header{
+    height:10%;
+    background-color: black;
+    filter: brightness(90%);
+    opacity: 0.8;
+}
+
+.signin-inside-container{
+    height:90%;
+}
+
+.signin-background{
+    background-image: url("../../img/signin/signin-background.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100%;
+    filter: brightness(80%);
+}
+
+.signin-span{
+    color:white;
+    font-family: monospace, Courier New, Courier, monospace;
+    font-size: 24px;
+}
+
+.signin-span-login{
+    color:white;
+    font-family: monospace, Courier New, Courier, monospace;
+    font-size: 24px;
+    text-align: center;
+}
+
+.signin-bottom-span{
+    color:snow;
+    font-family: monospace, Courier New, Courier, monospace;
+    font-weight: bold;
+}
+
+.signin-vertical-center {
+  min-height: 40%;
+  min-height: 40vh;
+  float: right;
+  display: flex;
+  align-items: center;
+}
+
+.signin-right-side{
+    height:100%;
+}
+
+.signin-right-side-row-top{
+    height:55%;
+}
+.signin-right-side-row-bottom{
+    height:35%;
+}
+
+.signin-popup-container{
+    align-items:center;
+    text-align: center;
+    background-color:white;
+    opacity: 0.8;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    border-radius: 7px;
+}
+
+.signin-first-row-container{
+    display:flex;
+    justify-content:center;
+    height:5%;
+    margin-top: 5%;
+    margin-bottom: 4%;
+}
+
+.signin-second-row-container{
+    display:flex;
+    justify-content: center;
+    height:5%;
+    margin: auto;
+}
+
+.signin-third-row-container{
+    display:flex;
+    justify-content: center;
+    height:30%;
+    margin: auto;
+}
+
+.signin-fourth-row-container{
+    display:flex;
+    justify-content: center;
+    height:6%;
+    margin: auto;
+    font-weight: bold;
+    text-align: center;
+}
+
+.signin-fifth-row-container{
+    display:flex;
+    justify-content: center;
+    height:10%;
+    margin-top: 5%;
+}
+
+.signin-captchaImage{
+    width:50%;
+    height: 50%;
+    margin: auto;
+    
+}
+
+::placeholder{
+    text-align: center;
+    font-weight: bold;
+}

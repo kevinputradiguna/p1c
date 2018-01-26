@@ -1,0 +1,72 @@
+.row-content{
+    height:87%;
+}
+
+.schedulePicker{
+    background-image:url(/MyAppDemo/assets/img/icon-create-room/Icon-Box-Schedule.png); 
+    background-repeat: no-repeat; 
+    background-size: 15px 15px;
+    background-position: 98% 40%;
+    padding-left: 10px;
+}
+
+.roomNameInput{
+    width: 400px;
+    padding-left: 10px;
+}
+
+.InstructorNameAutoComplete{
+    width: 400px;
+    padding-left: 10px;
+    background-image:url(/MyAppDemo/assets/img/icon-create-room/Icon-Search-Box-Instructure-Name.png); 
+    background-repeat: no-repeat; 
+    background-size: 15px 15px;
+    background-position: 98% 40%;
+}
+
+select {
+    -webkit-appearance: none;
+}
+
+.durationSelect{
+    width: 130px;
+    height: 34px;
+    padding-left: 10px;
+    background-image:url(/MyAppDemo/assets/img/icon-create-room/Icon-Box-Duration.png); 
+    background-repeat: no-repeat; 
+    background-position: 98% 40%;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    opacity: 1
+}
+
+.numberInput{
+    width: 70px;
+    text-align: center;
+}
+
+.demo-createroom-content    {
+    padding-left: 10%;
+}
+
+.button-blue{
+    color: white;
+    background-color: #05bafd;
+    border-color: #05bafd;
+}
+
+.table-head{
+    background-color: #f7f7f9;
+    border-bottom: 2px solid gray;
+}
+
+.demo-creatroom-topmenu{
+    padding: 0;
+    margin: 0;
+}
+
+.demo-creatroom-subtopmenu{
+    padding:0;
+    margin:0;
+}

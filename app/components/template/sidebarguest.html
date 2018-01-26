@@ -1,0 +1,35 @@
+<div class="side-menu sidebar-inverse side-menu-guest">
+    <nav class="navbar navbar-default navbar-guest" role="navigation">
+        <div class="side-menu-container side-menu-guest">
+            <div class="navbar-header">
+            </div>
+            <ul class="nav sidebar-nav">
+                <li>
+                    <a ng-href="javascript:void(0);">
+                        <span class="icon-side-menu-guest fa fa-share-square"></span>
+                        <span class="title-side-menu-guest">Join Room</span>
+                    </a> 
+                </li>
+                <li>
+                    <a ng-href="javascript:void(0);" ng-class="{'active' : $route.current.activetab == 'history'}">
+                        <span class="icon-side-menu-guest fa fa-clock-o {{ $route.current.activetab == 'history'? 'active-text-side-menu-guest':'' }}"></span>
+                        <span class="title-side-menu-guest {{ $route.current.activetab == 'history'? 'active-text-side-menu-guest':'' }}">History</span>
+                    </a>
+                </li>
+                <li>
+                    <a ng-href="javascript:void(0);">
+                        <span class="icon-side-menu-guest fa fa-pie-chart"></span>
+                        <span class="title-side-menu-guest">Statistic</span>
+                    </a>
+                </li>
+                <li ng-show="{{ true/false }}">
+                    <a ng-href="javascript:void(0);">
+                        <span class="icon-side-menu-guest fa fa-map-pin"></span>
+                        <span class="title-side-menu-guest">Evaluation</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+</div>

@@ -1,0 +1,27 @@
+.side-menu-guest{
+    height: 100%;
+    padding: 0;
+    margin :0;
+}
+.navbar-guest{
+    height: 100%;
+    background-color: rgb(27, 27, 27);
+    padding-left: 0;
+    border: 0;
+
+}
+.icon-side-menu-guest{
+    color: white; 
+    font-size: 30px;
+}
+.title-side-menu-guest{
+    color: white;
+    font-size: 30px; 
+}
+
+.active{
+    background-color: white;
+}
+.active-text-side-menu-guest{
+    color : black;
+}
